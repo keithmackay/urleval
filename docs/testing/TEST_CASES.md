@@ -21,3 +21,23 @@
 - **Input:** `/urleval --site "recipe sharing platform" recipebox.com homechef.io`
 - **Expected:** Proceeds directly, echoes parsed inputs without asking questions
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 3: Scoring Engine
+
+### TC-005: Long, hyphenated, generic domain
+- **Site:** SaaS project management tool
+- **Candidates:** my-project-management-tool.com
+- **Expected:** Low overall score (< 40), especially low on Memorability and Spelling Reliability
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-006: Invented word, .io TLD, tech context
+- **Site:** Developer API monitoring service
+- **Candidates:** traxio.io, apipulse.com, watchdog.dev
+- **Expected:** traxio.io scores well on Cleverness; apipulse.com on Relevance; watchdog.dev on Associations
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-007: Offensive/problematic associations
+- **Site:** Italian pen retailer
+- **Candidates:** penisland.com
+- **Expected:** Score of 1 on Associations with clear rationale about unintended reading
+- **Status:** [ ] Pass / [ ] Fail
