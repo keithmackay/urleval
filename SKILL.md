@@ -41,7 +41,7 @@ When `--update` is present in the invocation, run this procedure **before scorin
    - `TLD trust perception study [current year]`
    - `domain name length SEO memorability [current year]`
 
-2. Summarize the findings: identify any changes or new evidence that would affect the scoring rubrics or weights compared to the baked-in research summary.
+2. Summarize the findings: identify any changes or new evidence that would affect the scoring rubrics or weights compared to the baked-in research summary. If searches return no relevant results or only repeat known findings, state "No significant changes found since [last updated date]" in the Update Report and proceed using the baked-in rubric unchanged.
 
 3. Produce an **Update Report** at the very top of your response (before Top 3 Recommendations):
 
@@ -71,11 +71,11 @@ When `--update` is present in the invocation, run this procedure **before scorin
 ### Dimensions and Rubrics
 
 **1. Memorability (weight: 0.20)**
-- 5: ≤ 8 chars, 1–2 syllables, single word or portmanteau
-- 4: ≤ 12 chars, 2–3 syllables
-- 3: ≤ 16 chars, 3–4 syllables
-- 2: 16–20 chars or 5+ syllables
-- 1: > 20 chars, hard to segment visually
+- 5: 6–10 chars, 1–2 syllables, single word or portmanteau
+- 4: 11–14 chars, 2–3 syllables
+- 3: 15–17 chars, 3–4 syllables, or < 6 chars (too abbreviated to be meaningful)
+- 2: 18–22 chars or 5+ syllables
+- 1: > 22 chars, hard to segment visually
 
 **2. Spelling Reliability (weight: 0.15)**
 - 5: No plausible misspelling, no homophones, no hyphens, no numbers
@@ -210,7 +210,7 @@ Combine promising terms with common TLDs (.com, .io, .co, .app) to generate cand
 
 ### Output
 
-Include alternatives in the final score table, labeled with an asterisk (*) in the Domain column to distinguish them from the original candidates.
+Include alternatives in the final score table, labeled with "(alt)" after the domain name to distinguish them from the original candidates.
 
 ## Final Report Format
 
@@ -260,11 +260,11 @@ If any alternative scores notably higher (5+ points overall) than the best origi
 | Domain | Mem | Spell | Pron | Assoc | Brand | Rel | Comp | TLD | Overall | Availability |
 |--------|-----|-------|------|-------|-------|-----|------|-----|---------|--------------|
 | candidate1.com | 4 | 5 | 4 | 3 | 3 | 5 | 4 | 5 | 77.5 | Available ✓ |
-| *alternative1.io | 5 | 4 | 5 | 4 | 5 | 4 | 5 | 4 | 84.0 | Available ✓ |
+| alternative1.io (alt) | 5 | 4 | 5 | 4 | 5 | 4 | 5 | 4 | 84.0 | Available ✓ |
 | candidate2.com | 3 | 3 | 3 | 4 | 2 | 3 | 3 | 5 | 58.0 | Taken ✗ |
 ```
 
-- Original candidates appear first, then alternatives (marked with *)
+- Candidates from the original list appear first, then alternatives (labeled with "(alt)")
 - Sort all rows by Overall score descending
 - Include all candidates (even Taken ones) and all Available alternatives
 

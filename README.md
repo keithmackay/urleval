@@ -75,7 +75,7 @@ Scoring criteria are based on academic and industry research summarized in `docs
 1. Run `/urleval --update` and note the findings
 2. Edit `docs/research/DOMAIN_NAME_RESEARCH.md` with new findings
 3. Update the `RESEARCH_SUMMARY` section in `SKILL.md` to match
-4. Re-install: `cp SKILL.md ~/.claude/skills/urleval/SKILL.md` (or the symlink updates automatically)
+4. If installed via symlink (recommended): no action needed — the symlink always points to the latest file. If installed via copy: `cp SKILL.md ~/.claude/skills/urleval/SKILL.md`
 5. Commit and push
 
 ## Development
