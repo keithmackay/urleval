@@ -41,3 +41,23 @@
 - **Candidates:** penisland.com
 - **Expected:** Score of 1 on Associations with clear rationale about unintended reading
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 4: Availability Checking
+
+### TC-008: Known-taken domain
+- **Site:** Any
+- **Candidates:** google.com
+- **Expected:** Availability = Taken ✗
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-009: Clearly available domain
+- **Site:** Any
+- **Candidates:** xkzq99notadomainzzz.com
+- **Expected:** Availability = Available ✓
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-010: Ambiguous result
+- **Site:** Any
+- **Candidates:** [a recently-expired or unusual domain]
+- **Expected:** Availability = Unknown ⚠️ with note to verify manually
+- **Status:** [ ] Pass / [ ] Fail

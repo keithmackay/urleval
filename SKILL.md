@@ -128,6 +128,24 @@ Produce an internal scoring table for each candidate:
 | TLD Appropriateness    | X     | ...       |
 | **Overall**            | **X** |           |
 
+## Availability Checking
+
+After scoring all candidates, check availability for each one:
+
+1. For each candidate domain, run a web search using one of these queries:
+   - `"[domain.tld]" whois registrar available`
+   - `is [domain.tld] available to register`
+   - Search the domain on a registrar site like instantdomainsearch.com, namecheap.com, or cloudflare.com/products/registrar
+
+2. Parse the result:
+   - **Available** ✓: WHOIS shows no registrant, or registrar page shows "available to register"
+   - **Taken** ✗: WHOIS shows a registrant, registrar shows "registered", or lists a buy/transfer price
+   - **Unknown** ⚠️: Results are ambiguous, blocked, or conflicting
+
+3. Annotate each candidate with its availability status before producing the final report.
+
+**Note on accuracy:** Web search availability checks are best-effort. Always verify at your preferred registrar (Namecheap, Cloudflare Registrar, Google Domains) before purchasing.
+
 ## Scoring Engine Implementation
 
 The scoring engine is now implemented. For each candidate URL provided, this skill:
@@ -138,4 +156,4 @@ The scoring engine is now implemented. For each candidate URL provided, this ski
 4. Produces individual scoring tables for each candidate showing dimension-by-dimension rationales
 5. Ranks candidates by overall score
 
-The full report format (including availability checks, competitor analysis, alternatives, and export formats) will be added in a later phase. For now, output consists of all individual scoring tables organized by candidate, ranked from highest to lowest overall score.
+The full report format (including competitor analysis, alternatives, and export formats) will be added in a later phase. For now, output consists of all individual scoring tables organized by candidate, ranked from highest to lowest overall score, with availability status annotations.
