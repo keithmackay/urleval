@@ -75,3 +75,11 @@
 - **Candidates:** amazon.com, google.com, facebook.com (all known-taken)
 - **Expected:** Alternatives are generated; report notes all candidates are taken; Top 3 section draws from alternatives only
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 6: Report Format
+
+### TC-013: Full report completeness check
+- **Site:** Recipe sharing platform for home cooks
+- **Candidates:** recipebox.com, homechef.io, cookwith.me
+- **Expected:** Report has Section 1 (3 recs), Section 2 (3 candidate narratives), Section 3 (score table with candidates + alternatives, sorted by score), closing note
+- **Status:** [ ] Pass / [ ] Fail

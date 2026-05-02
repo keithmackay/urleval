@@ -180,14 +180,66 @@ Combine promising terms with common TLDs (.com, .io, .co, .app) to generate cand
 
 Include alternatives in the final score table, labeled with an asterisk (*) in the Domain column to distinguish them from the original candidates.
 
-## Scoring Engine Implementation
+## Final Report Format
 
-The scoring engine is now implemented. For each candidate URL provided, this skill:
+Once you have: (a) scored all candidates, (b) checked availability, (c) generated and scored alternatives — produce the report in this exact order:
 
-1. Parses and validates the input (site description, candidate URLs, flags)
-2. Scores all candidates across 8 research-backed dimensions using the rubrics above
-3. Calculates weighted overall scores (20–100 scale)
-4. Produces individual scoring tables for each candidate showing dimension-by-dimension rationales
-5. Ranks candidates by overall score
+---
 
-The full report format (including competitor analysis, alternatives, and export formats) will be added in a later phase. For now, output consists of all individual scoring tables organized by candidate, ranked from highest to lowest overall score, with availability status annotations.
+### Section 1: Top 3 Recommendations
+
+List the top 3 domains (from candidates + alternatives combined) by overall score, where availability is Available ✓ or Unknown ⚠️. Taken domains are excluded from Top 3.
+
+Format each entry as:
+
+```markdown
+## Top 3 Domain Recommendations
+
+### 1. [domain.tld] — Score: [X.X]/100
+**Availability:** Available ✓  
+**Why this one:** [2–4 sentences: what it does well, why it fits the site description, one caveat if any]
+
+### 2. [domain.tld] — Score: [X.X]/100
+**Availability:** Available ✓ / Unknown ⚠️  
+**Why this one:** [2–4 sentences]
+
+### 3. [domain.tld] — Score: [X.X]/100
+**Availability:** Available ✓ / Unknown ⚠️  
+**Why this one:** [2–4 sentences]
+```
+
+If fewer than 3 Available/Unknown domains exist (candidates + alternatives combined), include as many as exist and note that fewer than 3 were available.
+
+---
+
+### Section 2: Candidate Narratives
+
+One paragraph per original candidate (from the user's list), explaining the score in plain English. Include the overall score. Mention the strongest and weakest dimensions. Do not repeat the table — add interpretive context.
+
+Also briefly note any alternatives that stand out (if any alternative scored notably higher than the best candidate, call it out).
+
+---
+
+### Section 3: Full Score Table
+
+```markdown
+## Full Score Table
+
+| Domain | Mem | Spell | Pron | Assoc | Brand | Rel | Comp | TLD | Overall | Availability |
+|--------|-----|-------|------|-------|-------|-----|------|-----|---------|--------------|
+| candidate1.com | 4 | 5 | 4 | 3 | 3 | 5 | 4 | 5 | 77.5 | Available ✓ |
+| *alternative1.io | 5 | 4 | 5 | 4 | 5 | 4 | 5 | 4 | 84.0 | Available ✓ |
+| candidate2.com | 3 | 3 | 3 | 4 | 2 | 3 | 3 | 5 | 58.0 | Taken ✗ |
+```
+
+- Original candidates appear first, then alternatives (marked with *)
+- Sort all rows by Overall score descending
+- Include all candidates (even Taken ones) and all Available alternatives
+
+---
+
+### Closing Note
+
+End every report with:
+
+> Verify availability at your preferred registrar before purchasing. Availability data is sourced from web search and may not reflect real-time registry status.
