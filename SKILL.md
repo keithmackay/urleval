@@ -208,7 +208,7 @@ Format each entry as:
 **Why this one:** [2–4 sentences]
 ```
 
-If fewer than 3 Available/Unknown domains exist (candidates + alternatives combined), include as many as exist and note that fewer than 3 were available.
+If fewer than 3 Available/Unknown domains exist (candidates + alternatives combined), include as many as exist and begin with: 'Note: fewer than 3 available domains were found.'
 
 ---
 
@@ -216,7 +216,7 @@ If fewer than 3 Available/Unknown domains exist (candidates + alternatives combi
 
 One paragraph per original candidate (from the user's list), explaining the score in plain English. Include the overall score. Mention the strongest and weakest dimensions. Do not repeat the table — add interpretive context.
 
-Also briefly note any alternatives that stand out (if any alternative scored notably higher than the best candidate, call it out).
+If any alternative scores notably higher (5+ points overall) than the best original candidate, call it out explicitly: 'Note: [alternative] scores significantly higher than the best candidate and may be worth prioritizing.'
 
 ---
 

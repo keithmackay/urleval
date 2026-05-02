@@ -81,5 +81,9 @@
 ### TC-013: Full report completeness check
 - **Site:** Recipe sharing platform for home cooks
 - **Candidates:** recipebox.com, homechef.io, cookwith.me
-- **Expected:** Report has Section 1 (3 recs), Section 2 (3 candidate narratives), Section 3 (score table with candidates + alternatives, sorted by score), closing note
+- **Expected:** 
+  - Section 1: Exactly 3 recommendations (or fewer with explanatory note), each with score, availability, and narrative
+  - Section 2: One paragraph for each of the 3 original candidates (recipebox.com, homechef.io, cookwith.me)
+  - Section 3: Score table with all candidates + all Available alternatives (marked *), sorted by Overall score descending, all 10 columns present
+  - Closing note about verifying at a registrar
 - **Status:** [ ] Pass / [ ] Fail
