@@ -61,3 +61,17 @@
 - **Candidates:** [a recently-expired or unusual domain]
 - **Expected:** Availability = Unknown ⚠️ with note to verify manually
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 5: Alternative Suggestions
+
+### TC-011: Alternative generation
+- **Site:** Recipe sharing platform for home cooks
+- **Candidates:** recipebox.com (only one — more alternatives are needed)
+- **Expected:** ≥ 5 alternatives generated, all Available ✓, all scored; alternatives marked with * in table
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-012: All candidates taken
+- **Site:** Recipe sharing platform
+- **Candidates:** amazon.com, google.com, facebook.com (all known-taken)
+- **Expected:** Alternatives are generated; report notes all candidates are taken; Top 3 section draws from alternatives only
+- **Status:** [ ] Pass / [ ] Fail

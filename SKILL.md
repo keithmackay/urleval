@@ -146,6 +146,40 @@ After scoring all candidates, check availability for each one:
 
 **Note on accuracy:** Web search availability checks are best-effort. Always verify at your preferred registrar (Namecheap, Cloudflare Registrar, Google Domains) before purchasing.
 
+## Alternative Suggestions
+
+After checking availability for all candidates, generate alternative domain name suggestions.
+
+### Generation strategy (use all three, then merge and deduplicate):
+
+**A. Claude reasoning — semantic expansion**
+Think of 5–10 names that:
+- Are related to the site's purpose and audience
+- Are shorter or more memorable than the weaker candidates
+- Use different linguistic strategies: portmanteau, metaphor, action verb, invented word, abbreviation
+
+**B. Competitor research**
+Run a web search: `top [site category] websites domain names`
+- Identify naming patterns competitors use (e.g., short invented words, verbs, metaphors)
+- Suggest names that follow successful patterns without directly copying
+
+**C. Thesaurus expansion**
+For the 2–3 most relevant keywords in the site description, find synonyms and adjacent concepts.
+Use web search: `synonyms for [keyword]` or reason linguistically.
+Combine promising terms with common TLDs (.com, .io, .co, .app) to generate candidates.
+
+### Filtering
+
+1. Check availability for each generated alternative (same method as Availability Checking above).
+2. Discard unavailable alternatives.
+3. Score each available alternative using the 8-dimension rubric.
+4. Keep the top 10 by overall score.
+5. If fewer than 10 alternatives pass the availability check, include all available ones.
+
+### Output
+
+Include alternatives in the final score table, labeled with an asterisk (*) in the Domain column to distinguish them from the original candidates.
+
 ## Scoring Engine Implementation
 
 The scoring engine is now implemented. For each candidate URL provided, this skill:
