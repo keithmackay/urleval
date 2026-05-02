@@ -61,7 +61,7 @@ When `--update` is present in the invocation, run this procedure **before scorin
 4. Apply any updated criteria to scoring for this session only. Do not modify the baked-in `<!-- RESEARCH_SUMMARY_START -->` section — the baked-in summary remains as the default for future runs.
 
 5. End the Update Report with:
-   > To make these updates permanent, edit the RESEARCH_SUMMARY section in SKILL.md or re-run with `--update` to re-apply on demand.
+   > These updated criteria apply to this session only. To make them permanent, edit the `<!-- RESEARCH_SUMMARY_START -->` section in SKILL.md, or re-run with `--update` to re-apply on demand.
 
 <!-- RESEARCH_SUMMARY_START -->
 ## Scoring Criteria (Research-Based)
