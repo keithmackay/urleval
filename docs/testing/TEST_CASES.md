@@ -94,3 +94,25 @@
 - **Input:** `/urleval --update --site "developer API monitoring tool" traxio.io apipulse.com`
 - **Expected:** Update Report at top of response (with 4 queries listed), scoring proceeds with any updated criteria noted, full report produced, closing note about making changes permanent
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 8: Edge Cases
+
+### TC-015: No candidates
+- **Input:** `/urleval --site "recipe sharing platform"` (no URLs)
+- **Expected:** Generates 10 alternatives, Top 3 from alternatives only, opening note that no candidates were provided
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-016: Single candidate
+- **Input:** `/urleval --site "recipe sharing platform" recipebox.com`
+- **Expected:** Top 3 = recipebox.com + 2 best alternatives; note that only 1 candidate was provided
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-017: All candidates taken
+- **Input:** `/urleval --site "search engine" google.com bing.com yahoo.com`
+- **Expected:** All 3 candidates scored, Section 1 uses alternatives only, note that all candidates are taken
+- **Status:** [ ] Pass / [ ] Fail
+
+### TC-018: Invalid URL
+- **Input:** `/urleval --site "recipe platform" "my recipe site" recipebox.com`
+- **Expected:** "my recipe site" skipped with a note; recipebox.com evaluated normally
+- **Status:** [ ] Pass / [ ] Fail

@@ -275,3 +275,20 @@ If any alternative scores notably higher (5+ points overall) than the best origi
 End every report with:
 
 > Verify availability at your preferred registrar before purchasing. Availability data is sourced from web search and may not reflect real-time registry status.
+
+## Edge Cases
+
+**No candidates provided:**
+If the user provides a site description but no candidates, skip directly to Alternative Suggestions. Generate 10 alternatives from scratch and produce a Top 3 + Score Table report. Begin the response with: "No candidate URLs were provided. Here are AI-suggested alternatives based on your site description:"
+
+**Single candidate:**
+Proceed normally. The Top 3 section will contain the 1 original candidate + up to 2 alternatives (if available). Note: "Only one candidate was provided; remaining Top 3 slots are filled from alternatives."
+
+**All candidates taken:**
+Score all candidates normally (taken domains still receive scores — they inform naming direction). For Section 1 (Top 3), draw from alternatives only. If no alternatives are available either, note: "All candidates are taken and no available alternatives were found. Consider visiting a registrar's 'similar domains' tool for suggestions."
+
+**More than 20 candidates:**
+Score all candidates. For availability checking, note at the start: "Checking availability for [N] domains via web search — this may take a moment." Proceed with all checks.
+
+**Invalid URL format:**
+If a candidate contains spaces, special characters (other than hyphens), or is clearly not a domain (e.g., "my site", "https://"), note: "[candidate] doesn't look like a domain name and will be skipped." Continue processing valid candidates.
