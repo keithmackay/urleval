@@ -31,6 +31,38 @@ Do not ask for both at once. Ask for site description first, wait for the answer
 **Flags:**
 - `--update` — Run a web search for recent domain naming research before scoring. See the --update section below.
 
+## --update Flag: Research Refresh
+
+When `--update` is present in the invocation, run this procedure **before scoring**:
+
+1. Run the following web searches:
+   - `domain name effectiveness research [current year]`
+   - `best practices domain name branding [current year]`
+   - `TLD trust perception study [current year]`
+   - `domain name length SEO memorability [current year]`
+
+2. Summarize the findings: identify any changes or new evidence that would affect the scoring rubrics or weights compared to the baked-in research summary.
+
+3. Produce an **Update Report** at the very top of your response (before Top 3 Recommendations):
+
+   ```
+   ## Research Update ([today's date])
+   
+   **Queries run:** [list the 4 queries]
+   
+   **New findings:**
+   - [Finding]: [how it affects scoring, if at all]
+   
+   **No significant changes found in:** [list dimensions where research is unchanged]
+   
+   **Updated criteria applied to this evaluation.**
+   ```
+
+4. Apply any updated criteria to scoring for this session only. Do not modify the baked-in `<!-- RESEARCH_SUMMARY_START -->` section — the baked-in summary remains as the default for future runs.
+
+5. End the Update Report with:
+   > To make these updates permanent, edit the RESEARCH_SUMMARY section in SKILL.md or re-run with `--update` to re-apply on demand.
+
 <!-- RESEARCH_SUMMARY_START -->
 ## Scoring Criteria (Research-Based)
 

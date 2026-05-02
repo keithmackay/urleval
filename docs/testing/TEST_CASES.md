@@ -87,3 +87,10 @@
   - Section 3: Score table with all candidates + all Available alternatives (marked *), sorted by Overall score descending, all 10 columns present
   - Closing note about verifying at a registrar
 - **Status:** [ ] Pass / [ ] Fail
+
+## Phase 7: --update Flag
+
+### TC-014: --update flag
+- **Input:** `/urleval --update --site "developer API monitoring tool" traxio.io apipulse.com`
+- **Expected:** Update Report at top of response (with 4 queries listed), scoring proceeds with any updated criteria noted, full report produced, closing note about making changes permanent
+- **Status:** [ ] Pass / [ ] Fail
