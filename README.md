@@ -14,25 +14,69 @@ Scoring criteria are derived from academic and industry research on domain name 
 
 ## Installation
 
-### Prerequisites
-
-- [Claude Code](https://claude.ai/code)
-
-### Install
+### Claude Code
 
 ```bash
-# Clone this repository
 git clone https://github.com/keithmackay/urleval ~/.claude/plugins/urleval
 cd ~/.claude/plugins/urleval
 
-# Install the skill globally
 mkdir -p ~/.claude/skills/urleval
 ln -sf "$(pwd)/SKILL.md" ~/.claude/skills/urleval/SKILL.md
 ```
 
-### Verify
-
 Restart Claude Code, type `/`, and confirm `urleval` appears in the autocomplete list.
+
+### Codex
+
+Add an entry to your marketplace JSON (`~/.agents/plugins/marketplace.json`, create if absent):
+
+```json
+{
+  "name": "personal",
+  "interface": { "displayName": "Personal Plugins" },
+  "plugins": [
+    {
+      "name": "urleval",
+      "source": { "source": "local", "path": "/path/to/urleval/" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
+```
+
+Then invoke with `/urleval`.
+
+### Antigravity
+
+The root `SKILL.md` is natively compatible — no conversion needed.
+
+**Global install** (all workspaces):
+```bash
+cp -r /path/to/urleval/ ~/.gemini/antigravity/skills/urleval/
+```
+
+**Workspace install** (current project only):
+```bash
+cp -r /path/to/urleval/ .agents/skills/urleval/
+```
+
+Skills are auto-discovered. You can also invoke by name: `/urleval`.
+
+### Gemini CLI
+
+Gemini CLI installs extensions directly from GitHub:
+
+```bash
+gemini extensions install https://github.com/keithmackay/urleval
+```
+
+To update:
+```bash
+gemini extensions update urleval
+```
+
+The skill is auto-discovered from `GEMINI.md` after installation.
 
 ## Usage
 
@@ -102,6 +146,30 @@ To run a test:
 Compare the output against the expected behavior documented in `TEST_CASES.md`. Record actual outputs in [`docs/testing/SAMPLE_RUNS.md`](docs/testing/SAMPLE_RUNS.md) for regression reference.
 
 To contribute a change, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Compatibility
+
+| Feature | Claude Code | Codex | Antigravity | Gemini CLI |
+|---------|:-----------:|:-----:|:-----------:|:----------:|
+| Core skill | ✅ | ✅ | ✅ | ✅ |
+| Interactive input prompting | ✅ | ✅ | ✅ | ✅ |
+| Inline mode (`--site`, URL args) | ✅ | ✅ | ✅ | ✅ |
+| `--update` flag (web search) | ✅ | ✅ | ✅ | ✅ |
+| 8-dimension scoring | ✅ | ✅ | ✅ | ✅ |
+| Availability checking (web search) | ✅ | ✅ | ✅ | ✅ |
+| Alternative suggestions | ✅ | ✅ | ✅ | ✅ |
+
+Legend: ✅ Supported
+
+All features are fully portable — the skill uses no platform-specific metadata, triggers, or tool APIs beyond standard web search.
+
+## References
+
+- **Claude Code Skills:** https://code.claude.com/docs/en/skills
+- **Codex Plugins:** https://developers.openai.com/codex/plugins/build
+- **Antigravity Skills:** https://antigravity.google/docs/skills
+- **Gemini CLI Extensions:** https://github.com/google-gemini/gemini-cli/blob/main/docs/extension.md
+- **Agent Skills open standard:** https://agentskills.io/home
 
 ## License
 
