@@ -1,0 +1,55 @@
+name: Bug report
+description: Something the skill did that it shouldn't have
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Fill in as much as you can — the site description and candidate URLs are usually the most important context.
+
+  - type: textarea
+    id: site-description
+    attributes:
+      label: Site description used
+      description: The --site text you provided (or what you typed when prompted)
+      placeholder: e.g. "recipe sharing platform for home cooks"
+    validations:
+      required: true
+
+  - type: textarea
+    id: candidates
+    attributes:
+      label: Candidate URLs
+      description: The domain names you submitted
+      placeholder: e.g. recipebox.com, homechef.io
+    validations:
+      required: true
+
+  - type: textarea
+    id: flags
+    attributes:
+      label: Flags used
+      description: e.g. --update, inline mode, interactive mode
+      placeholder: e.g. --update
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened
+      description: Paste the actual skill output, or describe the problem
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What the skill should have done instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Anything else that might be relevant

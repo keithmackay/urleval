@@ -101,16 +101,8 @@ To run a test:
 
 Compare the output against the expected behavior documented in `TEST_CASES.md`. Record actual outputs in [`docs/testing/SAMPLE_RUNS.md`](docs/testing/SAMPLE_RUNS.md) for regression reference.
 
-To contribute a change:
-
-1. Fork the repo and create a branch
-2. Edit `SKILL.md` — all skill logic lives there
-3. Run the affected test cases manually and update `TEST_CASES.md` if needed
-4. Open a pull request
+To contribute a change, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-> [!NOTE]
-> No LICENSE file is present in this repository. If you intend to share or open-source this project, add one. [choosealicense.com](https://choosealicense.com) can help you pick the right one.
-
-MIT
+[MIT](LICENSE)
