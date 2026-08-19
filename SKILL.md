@@ -1,9 +1,9 @@
 ---
-name: urleval
-description: Evaluates candidate domain names/URLs for a website. Takes a site description and a list of candidate URLs, scores each across 8 research-backed dimensions, checks availability via web search, suggests alternatives, and produces a structured Markdown report. Invoke as /urleval.
+name: url-eval
+description: Evaluates candidate domain names/URLs for a website. Takes a site description and a list of candidate URLs, scores each across 8 research-backed dimensions, checks availability via web search, suggests alternatives, and produces a structured Markdown report. Invoke as /url-eval.
 ---
 
-# urleval — Domain Name Evaluator
+# url-eval — Domain Name Evaluator
 
 ## Overview
 
@@ -13,7 +13,7 @@ You are helping the user evaluate candidate domain names for a website. Follow t
 
 **If the user provided all inputs inline**, proceed directly to scoring. Inline format:
 ```
-/urleval [--update] [--site "description"] url1 url2 url3 ...
+/url-eval [--update] [--site "description"] url1 url2 url3 ...
 ```
 
 **If any input is missing**, collect it interactively in this order:

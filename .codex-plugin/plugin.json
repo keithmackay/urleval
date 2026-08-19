@@ -1,6 +1,6 @@
 {
-  "name": "urleval",
+  "name": "url-eval",
   "version": "1.0.0",
-  "description": "Evaluates candidate domain names/URLs for a website. Takes a site description and a list of candidate URLs, scores each across 8 research-backed dimensions, checks availability via web search, suggests alternatives, and produces a structured Markdown report. Invoke as /urleval.",
+  "description": "Evaluates candidate domain names/URLs for a website. Takes a site description and a list of candidate URLs, scores each across 8 research-backed dimensions, checks availability via web search, suggests alternatives, and produces a structured Markdown report. Invoke as /url-eval.",
   "skills": "./skills/"
 }

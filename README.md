@@ -1,10 +1,10 @@
-# urleval
+# url-eval
 
 A Claude Code skill that evaluates candidate domain names for a website — scoring them across 8 research-backed dimensions, checking availability, and suggesting alternatives you may not have considered.
 
 ## What it does
 
-Upload a site description and a list of candidate URLs, and `/urleval` produces a structured Markdown report with:
+Upload a site description and a list of candidate URLs, and `/url-eval` produces a structured Markdown report with:
 
 - **Top 3 recommendations** — score, narrative, availability status
 - **Candidate narratives** — plain-English analysis of each domain you submitted
@@ -17,14 +17,14 @@ Scoring criteria are derived from academic and industry research on domain name 
 ### Claude Code
 
 ```bash
-git clone https://github.com/keithmackay/urleval ~/.claude/plugins/urleval
-cd ~/.claude/plugins/urleval
+git clone https://github.com/keithmackay/url-eval ~/.claude/plugins/url-eval
+cd ~/.claude/plugins/url-eval
 
-mkdir -p ~/.claude/skills/urleval
-ln -sf "$(pwd)/SKILL.md" ~/.claude/skills/urleval/SKILL.md
+mkdir -p ~/.claude/skills/url-eval
+ln -sf "$(pwd)/SKILL.md" ~/.claude/skills/url-eval/SKILL.md
 ```
 
-Restart Claude Code, type `/`, and confirm `urleval` appears in the autocomplete list.
+Restart Claude Code, type `/`, and confirm `url-eval` appears in the autocomplete list.
 
 ### Codex
 
@@ -36,8 +36,8 @@ Add an entry to your marketplace JSON (`~/.agents/plugins/marketplace.json`, cre
   "interface": { "displayName": "Personal Plugins" },
   "plugins": [
     {
-      "name": "urleval",
-      "source": { "source": "local", "path": "/path/to/urleval/" },
+      "name": "url-eval",
+      "source": { "source": "local", "path": "/path/to/url-eval/" },
       "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
     }
@@ -45,7 +45,7 @@ Add an entry to your marketplace JSON (`~/.agents/plugins/marketplace.json`, cre
 }
 ```
 
-Then invoke with `/urleval`.
+Then invoke with `/url-eval`.
 
 ### Antigravity
 
@@ -53,27 +53,27 @@ The root `SKILL.md` is natively compatible — no conversion needed.
 
 **Global install** (all workspaces):
 ```bash
-cp -r /path/to/urleval/ ~/.gemini/antigravity/skills/urleval/
+cp -r /path/to/url-eval/ ~/.gemini/antigravity/skills/url-eval/
 ```
 
 **Workspace install** (current project only):
 ```bash
-cp -r /path/to/urleval/ .agents/skills/urleval/
+cp -r /path/to/url-eval/ .agents/skills/url-eval/
 ```
 
-Skills are auto-discovered. You can also invoke by name: `/urleval`.
+Skills are auto-discovered. You can also invoke by name: `/url-eval`.
 
 ### Gemini CLI
 
 Gemini CLI installs extensions directly from GitHub:
 
 ```bash
-gemini extensions install https://github.com/keithmackay/urleval
+gemini extensions install https://github.com/keithmackay/url-eval
 ```
 
 To update:
 ```bash
-gemini extensions update urleval
+gemini extensions update url-eval
 ```
 
 The skill is auto-discovered from `GEMINI.md` after installation.
@@ -83,7 +83,7 @@ The skill is auto-discovered from `GEMINI.md` after installation.
 ### Interactive mode (recommended)
 
 ```
-/urleval
+/url-eval
 ```
 
 Claude will ask for your site description, then your candidate URLs — one question at a time.
@@ -91,13 +91,13 @@ Claude will ask for your site description, then your candidate URLs — one ques
 ### Inline mode
 
 ```
-/urleval --site "description of your site" candidate1.com candidate2.io
+/url-eval --site "description of your site" candidate1.com candidate2.io
 ```
 
 ### With research refresh
 
 ```
-/urleval --update --site "description" candidate1.com
+/url-eval --update --site "description" candidate1.com
 ```
 
 Runs live web searches for recent domain naming research before scoring. Changes apply to the current session only; see [Updating the research baseline](#updating-the-research-baseline) to make them permanent.
@@ -121,16 +121,16 @@ Runs live web searches for recent domain naming research before scoring. Changes
 
 Scoring criteria are drawn from a curated research summary in [`docs/research/DOMAIN_NAME_RESEARCH.md`](docs/research/DOMAIN_NAME_RESEARCH.md), which covers 30+ academic and industry sources on memorability, spelling reliability, TLD trust, brand distinctiveness, and more.
 
-Run `/urleval --update` to supplement the baked-in summary with live web searches for current findings. The skill will produce an Update Report at the top of the response describing what, if anything, changed.
+Run `/url-eval --update` to supplement the baked-in summary with live web searches for current findings. The skill will produce an Update Report at the top of the response describing what, if anything, changed.
 
 ## Updating the research baseline
 
 To make research updates permanent:
 
-1. Run `/urleval --update` and note the findings
+1. Run `/url-eval --update` and note the findings
 2. Edit [`docs/research/DOMAIN_NAME_RESEARCH.md`](docs/research/DOMAIN_NAME_RESEARCH.md) with new findings
 3. Update the `<!-- RESEARCH_SUMMARY_START -->` section in `SKILL.md` to match
-4. If installed via symlink (recommended): no action needed — the symlink always points to the latest file. If installed via copy: `cp SKILL.md ~/.claude/skills/urleval/SKILL.md`
+4. If installed via symlink (recommended): no action needed — the symlink always points to the latest file. If installed via copy: `cp SKILL.md ~/.claude/skills/url-eval/SKILL.md`
 5. Commit and push
 
 ## Development
@@ -140,7 +140,7 @@ Manual test cases covering all 8 phases of the skill are in [`docs/testing/TEST_
 To run a test:
 
 ```
-/urleval --site "recipe sharing platform for home cooks" recipebox.com homechef.io cookwith.me
+/url-eval --site "recipe sharing platform for home cooks" recipebox.com homechef.io cookwith.me
 ```
 
 Compare the output against the expected behavior documented in `TEST_CASES.md`. Record actual outputs in [`docs/testing/SAMPLE_RUNS.md`](docs/testing/SAMPLE_RUNS.md) for regression reference.

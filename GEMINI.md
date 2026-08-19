@@ -1,1 +1,1 @@
-@./skills/urleval/SKILL.md
+@./skills/url-eval/SKILL.md
