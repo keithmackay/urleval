@@ -30,6 +30,7 @@ Do not ask for both at once. Ask for site description first, wait for the answer
 
 **Flags:**
 - `--update` — Run a web search for recent domain naming research before scoring. See the --update section below.
+- `--help` — Do not run the scoring workflow. Instead, read and display the contents of `help.md` (in this skill's folder) verbatim, then stop.
 
 ## --update Flag: Research Refresh
 
