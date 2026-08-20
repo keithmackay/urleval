@@ -1,6 +1,6 @@
-# Contributing to urleval
+# Contributing to url-eval
 
-Thanks for your interest in improving urleval. Contributions are welcome — bug reports, research updates, new test cases, and skill improvements alike.
+Thanks for your interest in improving url-eval. Contributions are welcome — bug reports, research updates, new test cases, and skill improvements alike.
 
 ## Reporting bugs
 
@@ -12,18 +12,18 @@ Open an issue using the [feature request template](.github/ISSUE_TEMPLATE/featur
 
 ## Making changes
 
-All skill logic lives in a single file: `SKILL.md`. There is no build step.
+Skill logic lives in `SKILL.md`, with reference material (the scoring rubric, report-format templates, edge cases) split into `references/`. There is no build step.
 
 ```bash
-git clone https://github.com/keithmackay/urleval ~/.claude/plugins/urleval
-cd ~/.claude/plugins/urleval
+git clone https://github.com/keithmackay/url-eval ~/.claude/plugins/url-eval
+cd ~/.claude/plugins/url-eval
 
 # Install the skill so you can test changes live
-mkdir -p ~/.claude/skills/urleval
-ln -sf "$(pwd)/SKILL.md" ~/.claude/skills/urleval/SKILL.md
+mkdir -p ~/.claude/skills/url-eval
+ln -sf "$(pwd)" ~/.claude/skills/url-eval
 ```
 
-Changes to `SKILL.md` take effect immediately via the symlink — no reinstall needed.
+Changes to `SKILL.md` or `references/` take effect immediately via the symlink — no reinstall needed. After editing, run `scripts/check-sync.sh` to verify the Codex-platform mirror (`skills/url-eval/`) hasn't drifted.
 
 ## Testing
 
@@ -36,9 +36,10 @@ Run the test cases affected by your change and record actual outputs in [`docs/t
 If you find new academic or industry research that changes how a dimension should be scored:
 
 1. Add the source and findings to [`docs/research/DOMAIN_NAME_RESEARCH.md`](docs/research/DOMAIN_NAME_RESEARCH.md)
-2. Update the matching rubric inside the `<!-- RESEARCH_SUMMARY_START -->` block in `SKILL.md`
+2. Update the matching rubric inside the `<!-- RESEARCH_SUMMARY_START -->` block in `references/scoring-rubric.md`
 3. Update the "Last updated" date in that block
-4. Run the affected test cases and note any score changes
+4. Run `scripts/check-sync.sh` and copy your change into `skills/url-eval/references/scoring-rubric.md` if it flags drift
+5. Run the affected test cases and note any score changes
 
 ## Pull requests
 
