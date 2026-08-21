@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
 ## [Unreleased]
 
+- Add Changelog section to README linking CHANGELOG.md
 - Rename skill to url-eval for kebab-case consistency
 - Add --help flag convention (help.md)
 - Move scoring rubric and report-format/edge-cases to references/, add check-sync.sh
