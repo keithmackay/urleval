@@ -171,6 +171,10 @@ All features are fully portable — the skill uses no platform-specific metadata
 - **Gemini CLI Extensions:** https://github.com/google-gemini/gemini-cli/blob/main/docs/extension.md
 - **Agent Skills open standard:** https://agentskills.io/home
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release history.
+
 ## License
 
 [MIT](LICENSE)
